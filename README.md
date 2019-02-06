@@ -12,8 +12,7 @@ These module is a component of the [System Integrity Management
 Platform][simp]
 a compliance-management framework built on Puppet.
 
-If you find any issues, they can be submitted to our
-[JIRA][jira]or you can find us on
+If you find any issues, please submit them to our [bug tracker][simp-jira].
 
 ## Setup
 
