@@ -1,4 +1,4 @@
-## simp-tpm12-rpms
+## simp-tpm12-simulator
 
 
 ## Description
