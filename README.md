@@ -25,7 +25,7 @@ and `simp-tpm12-simulator.spec`, as necessary.  Then build and package
 the simulator with the command `bundle exec rake pkg:rpm` from with the
 simp-tpm12-simulator directory.
 
-### Beginning with simp-tpm12-rpm
+### Beginning with simp-tpm12-simulator
 
 The TPM 1.2 simulator relies upon a couple rpm packages which should be
 installed on any target system intended to use the module. The packages are
