@@ -34,8 +34,9 @@
 #   * http://ibmswtpm.sourceforge.net/tpm_tss.html
 #
 
-# For EL7 systems, uncomment the following lines
-#simp-el7-tpm12-simulator:
+# For EL7 systems, create a softlink simp-tpm12-simulator pointing to 
+# simp-el7-tpm12-simulator and uncomment the following lines:
+#simp-tpm12-simulator:
 #  :type: :targz
 #  :build: 'yes'
 #  :version: '4769'
@@ -51,8 +52,9 @@
 #      - cp -v '%{PROJECT_DIR}/tcsdstarter' '%{SOURCES_DIR}/'
 #      - cp -v '%{PROJECT_DIR}/LICENSE' '%{SOURCES_DIR}/'
 
-# For EL6 systems, uncomment the following lines
-#simp-el6-tpm12-simulator:
+# For EL6 systems, create a softlink simp-tpm12-simulator pointing to
+# simp-el6-tpm12-simulator and uncomment the following lines:
+#simp-tpm12-simulator:
 #  :type: :targz
 #  :build: 'yes'
 #  :version: '4769'

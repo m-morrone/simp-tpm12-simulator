@@ -112,8 +112,8 @@ To initialize and use the TPM simulator on EL6, issue the following commands:
 
 Please read our [Contribution Guide](http://simp-doc.readthedocs.io/en/stable/contributors_guide/index.html).
 
-[simp]: https://github.com/NationalSecurityAgency/SIMP/
-[jira]: https://simp-project.atlassian.net/
-[simp-jira]: https://simp-project.atlassian.net/
+[bundler]:    https://bundler.io
+[simp]:       https://github.com/NationalSecurityAgency/SIMP/
+[simp-jira]:  https://simp-project.atlassian.net/
 [ibmswtpm12]: https://sourceforge.net/projects/ibmswtpm/
 
