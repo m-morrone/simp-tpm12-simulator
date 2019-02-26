@@ -108,6 +108,10 @@ To initialize and use the TPM simulator on EL6, issue the following commands:
 # service tpm12-tcsd start
 ```
 
+## Development
+
+Please read our [Contribution Guide](http://simp-doc.readthedocs.io/en/stable/contributors_guide/index.html).
+
 [simp]: https://github.com/NationalSecurityAgency/SIMP/
 [jira]: https://simp-project.atlassian.net/
 [simp-jira]: https://simp-project.atlassian.net/
