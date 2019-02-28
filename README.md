@@ -6,7 +6,7 @@
   * [This is a SIMP project](#this-is-a-simp-project)
 * [Setup](#setup)
   * [Requirements](#requirements)
-  * [Building the `simp-tpm12-simulator` RPM](#building-the-simp-tpm12-simulator-rpm)
+  * [Building the `simp-tpm12-simulator` RPMs](#building-the-simp-tpm12-simulator-rpms)
   * [Beginning with simp-tpm12-simulator](#beginning-with-simp-tpm12-simulator)
 * [Usage](#usage)
 * [Development](#development)
@@ -40,36 +40,25 @@ The TPM 2.0 simulator build process requires:
 * [bundler][bundler] 1.14+
 
 
-To build rpm files to install the TPM 1.2 simulator, install this package and
-update the configuration files, namely `things_to_build.yaml` and
-and `simp-tpm12-simulator.spec`, as necessary.  Specifically, uncomment the
-lines in the `things_to_build.yaml` corresponding to the build platform, EL6 or
-EL7. Then create a softlink named `simp-tpm12-simulator` pointing the
-corresponding `simp-el6-tpm12-simulator` or `simp-el7-tpm12-simulator` 
-directory.
-
-### Building the `simp-tpm12-simulator` RPM
-To build the `simp-tpm12-simulator` RPM:
+### Building the `simp-tpm12-simulator` RPMs
+To buildi both the `simp-tpm12-simulator` RPMs:
 
 ```sh
 # Use bundler to install all necessary gems (https://bundler.io)
 bundle install
 
-# change to the softlinked project directory:
-cd simp-tpm12-simulator/
-
-# Download source + build the RPM
+# Download source + build the el6 and el7 rpms
 bundle exec rake pkg:rpm
 
-# The RPM will be in the dist/ directory
-ls -l dist/*.rpm
+# The RPM will be in the dist/ directory of each repo
+ls -l ls -l simp-tpm12-simulator.el?/dist/*.rpm
 ```
 
 ### Beginning with simp-tpm12-simulator
 
-The TPM 1.2 simulator relies upon a couple rpm packages which should be
+The TPM 1.2 simulator relies upon a couple of rpm packages which should be
 installed on any target system intended to use the module. The packages are
-gcc, the GNU Compiler Collection, and trousers, and implementation of the 
+`gcc`, the GNU Compiler Collection, and [`trousers`][trousers], and implementation of the
 Trusted Computing Group's Software Stack(TSS) specification.  Additionally
 tpm-tools, a group of tools to manage and utilize the Trusted Computing
 Group's TPM hardware, is recommended.
@@ -116,4 +105,5 @@ Please read our [Contribution Guide](http://simp-doc.readthedocs.io/en/stable/co
 [simp]:       https://github.com/NationalSecurityAgency/SIMP/
 [simp-jira]:  https://simp-project.atlassian.net/
 [ibmswtpm12]: https://sourceforge.net/projects/ibmswtpm/
+[trousers]:   https://sourceforge.net/projects/trousers/
 
