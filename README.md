@@ -47,7 +47,7 @@ To build both the `simp-tpm12-simulator` RPMs:
 # Use bundler to install all necessary gems (https://bundler.io)
 bundle install
 
-# Download source + build the el6 and el7 rpms
+# Download source + build all rpms for your hosts' build dist (e.g. el7, el6)
 bundle exec rake pkg:rpm
 
 # The RPM will be in the dist/ directory of each repo

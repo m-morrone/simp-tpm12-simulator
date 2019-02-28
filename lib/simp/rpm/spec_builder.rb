@@ -20,7 +20,7 @@ module SIMP::RPM; end
 class SIMP::RPM::SpecBuilder < Rake::TaskLib
   include (Rake.verbose == true ? FileUtils::Verbose : FileUtils)
 
-  def initialize(config_hash, project_dir, rpm_dist)
+  def initialize(config_hash, project_dir, rpm_dist = '')
     @rpm_dist = rpm_dist
     @things_to_download = config_hash
     @project_dir = project_dir
@@ -119,11 +119,11 @@ class SIMP::RPM::SpecBuilder < Rake::TaskLib
     sh tar_cmd
     FileUtils.cp_r(File.join(@dirs[:extra_sources_dir], '.'), @dirs[:rpmbuild_sources])
 
+    dist_macro = @rpm_dist.empty? ? '' : "-D 'dist .#{@rpm_dist}' "
     Dir.chdir cwd
     puts "============================ SRPM ============================\n" * 7
     srpm_cmd = "RPM_BUILD_ROOT=#{@dirs[:rpmbuild_buildroot]} "\
-      "rpmbuild -D 'debug_package %{nil}' " \
-      "-D 'dist .#{@rpm_dist}' " \
+      "rpmbuild -D 'debug_package %{nil}' #{dist_macro}" \
       "-D '_topdir #{@dirs[:rpmbuild]}' " \
       "-D '_rpmdir #{@dirs[:dist]}' -D '_srcrpmdir #{@dirs[:dist]}' " \
       "-D '_build_name_fmt %%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.rpm' " \
@@ -136,8 +136,7 @@ class SIMP::RPM::SpecBuilder < Rake::TaskLib
     puts "============================ RPM ============================\n" * 7
 
     rpm_cmd = "RPM_BUILD_ROOT=#{@dirs[:rpmbuild_buildroot]} "\
-      "rpmbuild --define 'debug_package %{nil}' " \
-      "-D 'dist .#{@rpm_dist}' " \
+      "rpmbuild --define 'debug_package %{nil}' #{dist_macro}" \
       "-D '_topdir #{@dirs[:rpmbuild]}' " \
       "-D '_rpmdir #{@dirs[:dist]}' -D '_srcrpmdir #{@dirs[:dist]}' " \
       "-D '_build_name_fmt %%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.rpm' " \
