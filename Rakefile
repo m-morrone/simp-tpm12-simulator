@@ -1,7 +1,7 @@
 require_relative 'lib/simp/rpm/spec_builder'
 require_relative 'lib/simp/rpm/spec_builder_config'
 
-HOST_DIST   = %x[rpm -E '%dist'].strip.sub(/^\./,'')
+HOST_DIST   = %x[rpm -E '%dist'].strip.sub(/^\./,'')[0,3]
 namespaces  = []
 dist_dirs   = []
 
