@@ -20,7 +20,7 @@ simulator][ibmswtpm12] as EL6 and EL7 RPMs.
 
 ### This is a SIMP project
 
-These module is a component of the [System Integrity Management
+This module is a component of the [System Integrity Management
 Platform][simp], a compliance-management framework built on Puppet.
 
 If you find any issues, please submit them to our [bug tracker][simp-jira].
@@ -51,7 +51,7 @@ bundle install
 bundle exec rake pkg:rpm
 
 # The RPM will be in the dist/ directory of each repo
-ls -l ls -l simp-tpm12-simulator.el?/dist/*.rpm
+ls -l simp-tpm12-simulator.el?/dist/*.rpm
 ```
 
 ### Beginning with simp-tpm12-simulator
@@ -96,6 +96,8 @@ To initialize and use the TPM simulator on EL6, issue the following commands:
 # service tpm12-tpminit start
 # service tpm12-tcsd start
 ```
+
+> Note: Procedures for initializing the TPM simulator are detailed in the source code at libtpm/README.
 
 ## Development
 
