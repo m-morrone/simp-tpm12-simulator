@@ -21,7 +21,7 @@ simulator][ibmswtpm12] as EL6 and EL7 RPMs.
 ### This is a SIMP project
 
 These module is a component of the [System Integrity Management
-Platform][simp] a compliance-management framework built on Puppet.
+Platform][simp], a compliance-management framework built on Puppet.
 
 If you find any issues, please submit them to our [bug tracker][simp-jira].
 
@@ -29,7 +29,7 @@ If you find any issues, please submit them to our [bug tracker][simp-jira].
 
 ### Requirements
 
-The TPM 2.0 simulator build process requires:
+The TPM 1.2 simulator build process requires:
 
 * An EL6 or EL7 host with:
   - `rpm`
@@ -41,7 +41,7 @@ The TPM 2.0 simulator build process requires:
 
 
 ### Building the `simp-tpm12-simulator` RPMs
-To buildi both the `simp-tpm12-simulator` RPMs:
+To build both the `simp-tpm12-simulator` RPMs:
 
 ```sh
 # Use bundler to install all necessary gems (https://bundler.io)
@@ -58,8 +58,8 @@ ls -l ls -l simp-tpm12-simulator.el?/dist/*.rpm
 
 The TPM 1.2 simulator relies upon a couple of rpm packages which should be
 installed on any target system intended to use the module. The packages are
-`gcc`, the GNU Compiler Collection, and [`trousers`][trousers], and implementation of the
-Trusted Computing Group's Software Stack(TSS) specification.  Additionally
+`gcc`, the GNU Compiler Collection, and [`trousers`][trousers], an implementation
+of the Trusted Computing Group's Software Stack(TSS) specification.  Additionally
 tpm-tools, a group of tools to manage and utilize the Trusted Computing
 Group's TPM hardware, is recommended.
 
